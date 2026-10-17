@@ -1,5 +1,7 @@
 # @deepwhale-cn/dsh-cn-doc-formatter
 
+[![Listed on DSH Plugin Hub](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/zh/plugins/feely0208/dsh-cn-doc-formatter)
+
 
 ## 安装
 

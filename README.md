@@ -163,3 +163,7 @@ python "<插件目录>/scripts/verify_output.py" --dir <输出目录>
 
 MIT。**本软件不包含任何字体文件**；使用者在文档中选用何种字体，由使用者自行负责
 取得该字体的合法授权。
+
+---
+
+<p align="right"><a href="https://deepwhale.org.cn"><img src="https://www.deepwhale.org.cn/images/badge/deepwhale-badge.png" alt="powered by dwh" height="20"></a></p>

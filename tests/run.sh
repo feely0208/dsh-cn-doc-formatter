@@ -39,9 +39,10 @@ import { runPanel } from '$PWD/lib/run.mjs';
 const a = await runPanel({ input: '/nonexistent-x.md', out: '$TMP/x' });
 const b = await runPanel({ input: '$PWD/tests/sample.md', out: '' });
 const c = await runPanel({ input: '$PWD/lib/run.mjs', out: '$TMP/y' });
-if (a.ok || b.ok || c.ok) { console.error('坏输入未报错', a.ok, b.ok, c.ok); process.exit(1); }
+if (a.ok || c.ok) { console.error('坏输入未报错', a.ok, b.ok, c.ok); process.exit(1); }
+if (!b.ok) { console.error('留空输出目录应默认源文件旁', b); process.exit(1); }
 " >"$TMP/bad.log" 2>&1
-[ "$?" = "0" ] && ok "坏输入优雅报错（路径不存在 / 缺输出目录 / 非 md 文本）" || bad "坏输入处理异常：$(head -3 "$TMP/bad.log")"
+[ "$?" = "0" ] && ok "坏输入优雅报错（路径不存在 / 非 md 文本）；输出目录留空自动落到源文件旁" || bad "坏输入处理异常：$(head -3 "$TMP/bad.log")"
 
 echo ""
 echo "  ────────────────────────────────────────────────"

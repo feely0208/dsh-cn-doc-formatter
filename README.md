@@ -1,15 +1,5 @@
 # @deepwhale-cn/dsh-cn-doc-formatter
 
-[![dshfind 收录](https://dshfind.com/api/badge/feely0208/dsh-cn-doc-formatter?lang=zh)](https://dshfind.com/zh/plugins/feely0208/dsh-cn-doc-formatter)
-
-[![Listed on DSH Plugin Hub](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/zh/plugins/feely0208/dsh-cn-doc-formatter)
-
-
-## 安装
-
-```bash
-dsh plugin --profile web add @deepwhale-cn/dsh-cn-doc-formatter
-```
 **中文公文排版** —— 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 用的 skill 插件。
 
 按 **GB/T 9704-2012《党政机关公文格式》** 生成 `.docx` / `.pdf` / `.txt`，
@@ -128,6 +118,12 @@ pip install python-docx reportlab fontTools pypdf
 
 ## 用法
 
+### 面板（v0.2.0 起已带面板）
+
+侧栏「深鲸公文排版」：选 .md/.txt 源文件、填输出目录（可选标题 / 发文机关 / 成文日期）→ 勾选 docx / pdf / txt → 点「开始排版」→ 面板直接显示产物名、体积与绝对路径。面板走宿主 `/dsh-cn-doc-formatter/api/run`，复用随包的 python 排版脚本；Python 或依赖缺失时显示可读错误，不白屏。
+
+### CLI / 技能命令
+
 技能正文里有完整命令。核心三条：
 
 ```bash
@@ -163,7 +159,3 @@ python "<插件目录>/scripts/verify_output.py" --dir <输出目录>
 
 MIT。**本软件不包含任何字体文件**；使用者在文档中选用何种字体，由使用者自行负责
 取得该字体的合法授权。
-
----
-
-<p align="right"><a href="https://deepwhale.org.cn"><img src="https://www.deepwhale.org.cn/images/badge/deepwhale-badge.png" alt="powered by dwh" height="20"></a></p>
